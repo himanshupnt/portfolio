@@ -1,0 +1,387 @@
+@import "../../bower_components/susy/sass/susy";
+@import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../../bower_components/normalize-css/normalize";
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:700|Great+Vibes|Istok+Web|Pontano+Sans);
+$susy: (
+  columns: 8,
+  container: 1140px,
+  global-box-sizing: border-box,
+  debug: (image: hide)
+);
+
+$tablet: 600px;
+$desktop: 980px;
+h1, h2, h3, h4, h5, h6, hr {
+  margin: 0;
+}
+
+@include border-box-sizing;
+@mixin cf {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+html {
+  font-size: 107%;
+  line-height: 1.4;
+  font-family: "Istok Web", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #313131;
+}
+
+.wrap {
+  @include container();
+
+  // Breakpoint for tablet view
+  @include susy-breakpoint($tablet, 9) {
+    @include show-grid();
+  }
+
+  // Breakpoint for desktop view
+  @include susy-breakpoint($desktop, 16) {
+    @include show-grid();
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo {
+  line-height: 1.1;
+  float: left;
+  font-family: "Great Vibes", cursive;
+  font-size: 35px;
+  transform: rotateZ(-15deg);
+  margin-top: 5%;
+  margin-left: 2%;
+  font-weight: bold;
+  text-decoration: none;
+  @include susy-breakpoint($tablet, 9) {
+    font-size: 3.6rem;
+  }
+  @include breakpoint(min-width $desktop) {
+    font-size: 2.6rem;
+  }
+}
+
+.last-nm {
+  display: block;
+  padding-left: 30%;
+  font-size: 30px;
+  font-weight: normal;
+  transform: rotateZ(-6deg);
+  @include susy-breakpoint($tablet, 9) {
+    font-size: 3rem;
+  }
+  @include breakpoint(min-width $desktop) {
+    font-size: 2rem;
+  }
+}
+
+.hero-text {
+  font-family: "Great Vibes", cursive;
+  text-align: center;
+}
+
+.hero-text-main {
+  font-size: 12rem;
+  font-family: "Istok Web", sans-serif;
+  line-height: 1;
+  padding-top: 5%;
+  @include breakpoint($tablet $desktop) {
+    font-size: 16rem;
+  }
+  @include breakpoint(min-width $desktop) {
+    padding-top: 0;
+  }
+
+}
+
+.hero-sub-text-small {
+  font-size: 2rem;
+  color: #9575CD;
+  @include susy-breakpoint($tablet, 9) {
+    font-size: 3rem;
+  }
+}
+
+.hero-sub-text-large {
+  line-height: 1.2;
+  font-size: 4.4rem;
+  padding: 1.2rem;
+  @include breakpoint(min-width 400px) {
+    font-size: 6rem;
+  }
+  @include susy-breakpoint($tablet, 9) {
+    font-size: 8rem;
+    padding: 2.5rem;
+  }
+  @include breakpoint(min-width $desktop) {
+    word-spacing: 16px;
+  }
+}
+
+.profile-banner {
+  background-color: #311B92;
+  height: 60px;
+  padding-top: 5%;
+  @include breakpoint(min-width 380px) {
+    height: 15vh;
+  }
+  @include breakpoint(min-width $desktop) {
+    height: 18vh;
+  }
+}
+
+#profile-pic {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 35%;
+  border-radius: 20%;
+  @include breakpoint(min-width $tablet) {
+    max-width: 30%;
+  }
+  @include breakpoint(min-width $desktop) {
+    max-width: 225px;
+  }
+
+}
+
+.about-me-text {
+  margin-top: 30%;
+  @include susy-breakpoint($desktop, 16) {
+    margin-top: 20%;
+    width: span(10);
+    margin-left:auto;
+    margin-right: auto;
+}
+@include breakpoint(min-width 1600px) {
+  margin-top: 12%;
+}
+}
+
+.about-me-heading {
+  text-align: center;
+  @include susy-breakpoint($tablet, 9) {
+    font-size: 3.5rem;
+  }
+}
+
+.highlighted-text {
+  color: #6200EA;
+}
+
+article {
+  overflow: hidden;
+
+}
+
+article p {
+  margin-top:30px;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  font-size: 20px;
+  text-align: center;
+  color: #616161;
+  @include susy-breakpoint($tablet, 9) {
+    max-width: span(7);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+  }
+  @include susy-breakpoint($desktop, 16) {
+    max-width: span(12);
+}
+}
+
+.button {
+  max-width: span(6);
+  margin-top: 40px;
+  border-radius: .5rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #e85151;
+  border: none;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 1.3rem;
+  @include susy-breakpoint($tablet, 9){
+    max-width: span(4);
+    padding: 15px;
+  }
+  @include susy-breakpoint(min-width 1140px, 16){
+    max-width: span(6);
+  }
+}
+
+.articles {
+  padding-top: 90px;
+  @include susy-breakpoint($desktop, 16)  {
+    max-width: span(12);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+  }
+}
+
+.text-right {
+  @include susy-breakpoint($desktop, 12){
+    @include span(7 last);
+  }
+}
+
+.text-left {
+  @include susy-breakpoint($desktop, 12){
+    @include span(7 first);
+  }
+}
+
+.article-heading {
+  font-weight: 100;
+  text-align: center;
+  @include susy-breakpoint($tablet, 9) {
+    max-width: span(7);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.5rem;
+  }
+  @include susy-breakpoint($desktop, 12){
+    margin: 4% auto 2% auto;
+    font-weight: 600;
+  }
+}
+
+.article-heading-right{
+  @include susy-breakpoint($desktop, 12)  {
+    @include span(7 last);
+  }
+}
+
+.article-heading-left{
+  @include susy-breakpoint($desktop, 12)  {
+    @include span(7);
+    // float: left;
+    // margin: auto;
+  }
+}
+
+.article-image {
+  margin: 35px;
+  width:100%;
+  max-width: span(4);
+  margin-left: auto;
+  margin-right: auto;
+  @include susy-breakpoint($tablet, 9) {
+    max-width: span(3);
+  }
+  @include susy-breakpoint($desktop, 12) {
+    margin: 10px;
+  }
+}
+
+.img-to-left {
+  @include susy-breakpoint($desktop, 12)  {
+    @include span(3);
+
+  }
+}
+
+.img-to-right {
+  @include susy-breakpoint($desktop, 12)  {
+    @include span(4 last);
+    margin-top: 20%;
+  }
+}
+
+.social img {
+  @include breakpoint(min-width $tablet){
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#get-in-touch {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.social {
+  width: span(4);
+  @include breakpoint(min-width 350px) {
+    width: span(3);
+  }
+  margin-left: auto;
+  margin-right: auto;
+  padding: 35px 0 35px;
+  @include susy-breakpoint($tablet, 9) {
+    width: span(3);
+  }
+}
+
+.contact-items {
+  @include cf;
+  overflow: visible;
+  list-style: none;
+  padding-left: 2%;
+  margin-bottom: 0;
+  @include breakpoint(min-width 350px) {
+    padding-left: 10px;
+  }
+  @include breakpoint(min-width $tablet) {
+    // padding-left: 10px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 6%;
+  }
+  @include breakpoint(min-width 700px) {
+    padding-left: 8%;
+  }
+  @include breakpoint(min-width $desktop) {
+    padding-left: 10%;
+  }
+}
+
+.list-item {
+  float: left;
+}
+
+.item-one {
+  transform: translateY(15px);
+}
+
+.item-two {
+  transform: translateY(-10px);
+}
+
+.item-three{
+  transform: translate(6px,20px);
+}
+
+.footer {
+  width: 100vw;
+  overflow: hidden;
+  background-color: #607D8B;
+  color: #c7c7c7;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.footer a{
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+#footer-link-text {
+  color: white; font-size: 20px;
+}
